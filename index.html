@@ -475,25 +475,18 @@
                 </select></td>
                 </tr>
                 <tr>
-                <td> Mail <p id="pp">Optional</p></td>
+                <td> Email</td>
                 </tr>
                 <tr>
                 <td><input type="email" id="mail"></td>
             </tr>
         </table>
-       <button class="btn" onclick="book()" id="tablebtn">BOOK TABLE</button>
+       <button class="btn"  id="tablebtn">BOOK TABLE</button>
    <table id="table">
     
    </table>
     </div>
-    <div class="creat">
-        <div class="me">
-            <h2>Create by</h2>
-            <h1>SANTOSH</h1>
-        </div>
-        <div class="photo"></div>
-        <p>Santosh Hadiya From Gujarat Univerdity</p>
-    </div>
+    
     <div class="romentic">
         <div class="box">
             <div class="box_img" style=" background-image: url(romantic_resturent.webp);"></div>
@@ -530,68 +523,6 @@
       </div>
       
     </div>
-    <script src="jquery-3.6.1.js"></script>
-    <script>
-        function book(){
-            var date=document.getElementById('date').value;
-            var name=document.getElementById('name').value;
-            var time=document.getElementById('time').value;
-            var phone=document.getElementById('phone').value;
-            var people=document.getElementById('people').value;
-            var mail=document.getElementById('mail').value;
-            var date2=new Date(date);
-            var currnt=new Date();
-            if(date2<currnt || date2.getDay()!=currnt.getDay()+1)
-            {
-                alert("BOOKING FOR TOMMOROW ONLY!");
-                return;
-            }
-            var time2=date2.getDate();
-            var month=date2.getMonth();
-            var year=date2.getFullYear();
-            if(date=="" || name== "" || phone=="")
-            {
-                alert("Pliz Fill-Up Form");
-            }
-            else{
-          document.getElementById('table').innerHTML="<h2>Your Table Hase Been Booked!</h2>"+"<tr><td>Name:</td><td> "+name+"</td></tr>"+"<tr><td>Date:</td><td> "+time2+"/"+month+"/"+year+" :tommorow"+"</td></tr>"+"</td></tr>"+"<tr><td>Phone:</td><td> "+phone+"</td></tr>"+"<tr><td>People:</td><td> "+people+"</td></tr>"+"<tr><td>Mail:</td><td> "+mail+"</td></tr>";
-            }
-        }
-        function time(){
-            setTimeout(gettime,1000);
-        }
-        function gettime(){
-            var x=new Date();
-            var hours=x.getHours();
-            var minut=x.getMinutes();
-            var seco=x.getSeconds();
-            var hor;
-            if(hours>12)
-            {
-              hor=hours-12;
-            }
-            if(hours>12){
-            document.getElementById('ctime').innerHTML="Time : "+hor+":"+minut+":"+seco+" pm";
-            }
-            else{
-                document.getElementById('ctime').innerHTML="Time : "+hours+":"+minut+":"+seco+" am";
-
-            }
-            time();
-        }
-        $(document).ready(function(){
-            $('#pp').hide();
-            $('#mail').hover(function(){
-                $('#pp').show();
-            })
-            $('#mail').mouseout(function(){
-                $('#pp').hide();
-            })
-            $('#tablebtn').click(function()
-            {
-                $('#table').slideDown();
-            })
-        })
-    </script>
+   
 </body>
 </html>
